@@ -9,6 +9,14 @@ public class Transactionrequest {
 	private Long receiverMobileNo;
 	private Double amount;
 	private String senderpassword;
+	private String receiverpassword;
+	
+	public String getReceiverpassword() {
+		return receiverpassword;
+	}
+	public void setReceiverpassword(String receiverpassword) {
+		this.receiverpassword = receiverpassword;
+	}
 	public Long getSendermobileNo() {
 		return sendermobileNo;
 	}

@@ -82,7 +82,7 @@ public class UserServiceImpl implements UserService {
 		if(transactionrequest.getReceiverMobileNo() == null) {
 			throw new EwalletCustomException("mobile number cannot be blank in request");
 		}
-		if(transactionrequest.getSenderpassword() == null) {
+		if(transactionrequest.getReceiverpassword() == null) {
 			throw new EwalletCustomException("password cannot be blank in request");
 		}
 		
@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
 		if(existuser == null) {
 			throw new EwalletCustomException("user dosn't not exist with mobile number " + transactionrequest.getReceiverMobileNo());
 		}
-		if(!transactionrequest.getSenderpassword().equals(existuser.getPassword())) {
+		if(!transactionrequest.getReceiverpassword().equals(existuser.getPassword())) {
 			throw new EwalletCustomException("password is incorrect of mobile number " + transactionrequest.getReceiverMobileNo());
 		}
 		

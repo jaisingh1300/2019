@@ -1,0 +1,96 @@
+1. adduser - POST
+
+URL :=- http://localhost:8080/adduser
+request : -  
+{
+	"userName":"jai",
+	"mobileNo":9983676042,
+	"password":"1357"
+}
+
+response :-
+{
+    "userid": 28,
+    "userName": "jai",
+    "mobileNo": 9983676042,
+    "amount": 0
+}
+
+2 . getuser:- GET
+URL :- localhost:8080/get/9983676000
+response :-
+{
+    "userid": 28,
+    "userName": "jai",
+    "mobileNo": 9983676042,
+    "amount": 0
+}
+
+3. addmoney : - POST
+request:- {
+	"receiverMobileNo":9983676042,
+	"receiverpassword":"1357",
+	"amount":10.0
+}
+
+response :-
+{
+    "transactionid": 29,
+    "sendermobileNo": 1000000000,
+    "receiverMobileNo": 9983676042,
+    "amount": 10,
+    "status": "200",
+    "createdAt": "2019-06-03T21:46:38.939"
+}
+
+4. transfermoney :-  POST
+URL: - http://localhost:8080/transfermoney
+request :- 
+{
+	"sendermobileNo":9983676043,
+	"senderpassword":"1357",
+	"receiverMobileNo":9983676042,
+	"amount":10.0
+}
+
+response :-
+{
+    "transactionid": 30,
+    "sendermobileNo": 9983676043,
+    "receiverMobileNo": 9983676042,
+    "amount": 10,
+    "status": "200",
+    "createdAt": "2019-06-03T21:49:35.135"
+}
+
+5. show transactions :-GET
+URL :-
+localhost:8080/showtransactions/9983676041
+
+response :-
+[
+    {
+        "transactionid": 23,
+        "sendermobileNo": 0,
+        "receiverMobileNo": 9983676041,
+        "amount": 10,
+        "status": null,
+        "createdAt": "2019-06-03T15:55:35"
+    },
+    {
+        "transactionid": 26,
+        "sendermobileNo": 9983676041,
+        "receiverMobileNo": 9983676043,
+        "amount": 10,
+        "status": null,
+        "createdAt": "2019-06-03T16:14:35"
+    },
+    {
+        "transactionid": 27,
+        "sendermobileNo": 0,
+        "receiverMobileNo": 9983676041,
+        "amount": 10,
+        "status": null,
+        "createdAt": "2019-06-03T16:41:49"
+    }
+]
